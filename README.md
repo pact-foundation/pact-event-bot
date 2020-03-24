@@ -28,9 +28,13 @@ A slack event bot built with serverless/typescript/webpack using AWS Lambda & AP
    1. Add a suitable bot name and image, This will be shown with the message.
    2. get the OAuth Access Token and set as `SLACK_TOKEN` in your `.env` file
 7. In a terminal shell where the `SLACK_TOKEN` & `SLACK_SIGNING_TOKEN` env vars are available, run `sls deploy` again to deploy the application complete with slack tokens
-8. Create a new user and join `General` and see the epehemeral message in action.
+8. Create a new user and join `General` and see an epehemeral message in action.
   ```
   Hi @member, welcome to the Pact Foundation community!
   Please join the relevant channels for your Pact implementation, so you can discuss your issues with the audience who can best help you.
-  If you need help with an issue please check your DM from the pact-welcome-bot for more info.
+  If you need help with an issue please check your DM from the welcome bot for more info.
+  ```
+9. Join a new channel and see an epehemeral message in action.
+  ```
+  Hi @member, Thanks for joining a new Pact Foundation channel. Feel free to ask questions
   ```
