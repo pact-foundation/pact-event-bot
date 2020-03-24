@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "rootDir": "src",
+    "target": "es2016",
+    "moduleResolution": "node",
+    "strict": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules"]
+}

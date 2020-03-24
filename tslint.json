@@ -1,0 +1,19 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "node_modules_prod/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  },
+  "rulesDirectory": [
+    "tslint-no-focused-test"
+  ],
+  "rules": {
+    "interface-name": [true, "never-prefix"],
+    "object-literal-sort-keys": false,
+    "no-focused-test": true
+  }
+}

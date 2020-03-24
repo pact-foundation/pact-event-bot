@@ -1,0 +1,39 @@
+service: pact-event-bot
+
+plugins:
+  - "@jbourne/serverless-webpack"
+  - serverless-pseudo-parameters
+  - serverless-offline
+  - serverless-iam-roles-per-function
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:AwsRegion, 'eu-west-2'}
+  environment:
+    SERVICE_NAME: ${self:service}
+    SLACK_TOKEN: ${env:SLACK_TOKEN}
+    SLACK_SIGNING_TOKEN: ${env:SLACK_SIGNING_TOKEN}
+  resourcePolicy:
+    # Public-facing endpoints
+    - Effect: "Allow"
+      Principal: "*"
+      Action: "execute-api:Invoke"
+      Resource:
+        - "execute-api:/${self:provider.stage}/POST/slack/*"
+
+functions:
+  slackEvent:
+    handler: src/slackEvent.handler
+    events:
+      - http:
+          path: slack/challenge
+          method: post
+
+custom:
+  webpack:
+    serializedCompile: true
+    excludeFiles: src/**/*.test.ts
+    packager: yarn
+    includeModules: true

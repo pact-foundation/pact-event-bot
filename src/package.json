@@ -1,0 +1,51 @@
+{
+  "name": "pact-slack-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "YOU54F",
+  "license": "MIT",
+  "scripts":{
+    "lint": "tsc --noEmit && tslint --project .",
+    "lint-fix": "tslint --project . --fix",
+    "build": "serverless webpack --out build",
+    "start:serverless": "NODE_OPTIONS=--max_old_space_size=4096 serverless offline --host 0.0.0.0 --stage dev --webpack-use-polling"
+  },
+  "dependencies": {
+    "aws-lambda": "^0.1.2",
+    "aws-sdk": "^2.467.0",
+    "@slack/events-api": "^2.3.2",
+    "aws-xray-sdk": "^2.3.4",
+    "bunyan": "^1.8.12",
+    "serverless": "^1.58.0",
+    "serverless-offline": "5.12.1",
+    "serverless-pseudo-parameters": "^2.4.0",
+    "source-map-support": "^0.5.12"
+  },
+  "devDependencies": {
+    "@jbourne/serverless-webpack": "^5.4.2-alpha.2",
+    "@pact-foundation/pact": "^8.2.4",
+    "@types/aws-lambda": "^8.10.31",
+    "@types/bunyan": "^1.8.6",
+    "@types/jest": "^24.0.13",
+    "@types/supertest": "^2.0.7",
+    "husky": "^2.3.0",
+    "jest": "^25.1.0",
+    "jest-express": "^1.10.1",
+    "jest-junit": "^6.4.0",
+    "jest-stare": "^1.14.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1",
+    "serverless-iam-roles-per-function": "^2.0.2",
+    "supertest": "^4.0.2",
+    "swagger-mock-validator": "^6.0.1",
+    "ts-jest": "^25.2.1",
+    "ts-loader": "^6.0.2",
+    "ts-node": "^8.2.0",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-no-focused-test": "^0.5.0",
+    "typescript": "^3.5.1",
+    "webpack": "^4.32.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
