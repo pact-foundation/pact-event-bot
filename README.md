@@ -32,11 +32,11 @@ A slack event bot built with serverless/typescript/webpack using AWS Lambda & AP
 8. Run `SLACK_SIGNING_TOKEN=123 SLACK_TOKEN-abc sls deploy` to deploy the application complete with slack tokens
 9.  Create a new user and join `General` and see an epehemeral message in action.
   ```
-  Hi @member, welcome to the Pact Foundation community!
+  Hi member, welcome to the Pact Foundation community!
   Please join the relevant channels for your Pact implementation, so you can discuss your issues with the audience who can best help you.
   If you need help with an issue please check your DM from the welcome bot for more info.
   ```
 10. Join a new channel and see an epehemeral message in action.
   ```
-  Hi @member, Thanks for joining a new Pact Foundation channel. Feel free to ask questions
+  Hi member, Thanks for joining a new Pact Foundation channel. Feel free to ask questions
   ```
