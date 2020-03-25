@@ -55,14 +55,14 @@ export const handler: AsyncAPIGatewayProxyHandler = async (event, context) => {
             const userResult = await web.users.info({ user: userId });
             const user = userResult.user as any;
             username = user.real_name;
-            text = `Hi @${username}, Thanks for joining a new Pact Foundation channel. Feel free to ask questions`;
+            text = `Hi ${username}, Thanks for joining a new Pact Foundation channel. Feel free to ask questions`;
             break;
           }
           case "team_join": {
             const user = eventData.data.user;
             userId = user.id;
             username = user.real_name;
-            text = `Hi @${username}, welcome to the Pact Foundation community!\n\nPlease join the relevant channels for your Pact implementation, so you can discuss your issues with the audience who can best help you.\n\nIf you need help with an issue please check your DM from the welcome bot for more info.`;
+            text = `Hi ${username}, welcome to the Pact Foundation community!\n\nPlease join the relevant channels for your Pact implementation, so you can discuss your issues with the audience who can best help you.\n\nIf you need help with an issue please check your DM from the welcome bot for more info.`;
             break;
           }
         }
