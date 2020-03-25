@@ -28,7 +28,7 @@ functions:
     handler: src/slackEvent.handler
     events:
       - http:
-          path: slack/challenge
+          path: slack/event
           method: post
 
 custom:

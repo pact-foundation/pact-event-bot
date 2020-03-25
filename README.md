@@ -10,31 +10,33 @@ A slack event bot built with serverless/typescript/webpack using AWS Lambda & AP
 ### setup
 
 1. run `yarn install` to install dependencies
-2. run `sls deploy` to deploy the app
-3. Add a slack app and click on `Event Subscriptions`
+2. Install a slack app to the workplace
+3. On the app, go to the `Basic Information` page and get the Verification Token setting this as `SLACK_SIGNING_TOKEN` in your `.env` file
+4. run `SLACK_SIGNING_TOKEN=123 sls deploy` to deploy the app
+5. Add a slack app and click on `Event Subscriptions`
    1. You will be asked to enter a URL, enter the URL output the from Serverless deploy step
    2. This will respond to the verification challenge, and turn verified
       1. If you have issues, check the aws cloudfront logs for the slack bot lambda
    3. In the `Subscribe to events on behalf of users` section add the following
       - member_joined_channel
       - team_join
-   4. Go to the `OAuth Tokens & Redirect URLs` page and in the `User Token Scopes` section add the following
+   4. Go to the `OAuth Tokens & Redirect URLs` page and in the `User Token Scopes` section and check the following is enabled
       - channels:read
       - groups:read
       - users:read
-4. Install the app to the workplace
-5. On the app, go to the `Basic Information` page and get the Verification Token setting this as `SLACK_SIGNING_TOKEN` in your `.env` file
-6. Create a `bot` custom integration in slack as a bot.
-   1. Add a suitable bot name and image, This will be shown with the message.
-   2. get the OAuth Access Token and set as `SLACK_TOKEN` in your `.env` file
-7. In a terminal shell where the `SLACK_TOKEN` & `SLACK_SIGNING_TOKEN` env vars are available, run `sls deploy` again to deploy the application complete with slack tokens
-8. Create a new user and join `General` and see an epehemeral message in action.
+6. Go to them `Install App` page and click to add the app to your workspace. You will be asked to grant permissions.
+7. Search for an app called `bots` in the slack app directory
+   1. Click Add to slack
+   2. Add a suitable bot name and image, This will be shown with the message.
+   3. get the API Token and set as `SLACK_TOKEN` in your `.env` file
+8. Run `SLACK_SIGNING_TOKEN=123 SLACK_TOKEN-abc sls deploy` to deploy the application complete with slack tokens
+9.  Create a new user and join `General` and see an epehemeral message in action.
   ```
   Hi @member, welcome to the Pact Foundation community!
   Please join the relevant channels for your Pact implementation, so you can discuss your issues with the audience who can best help you.
   If you need help with an issue please check your DM from the welcome bot for more info.
   ```
-9. Join a new channel and see an epehemeral message in action.
+10. Join a new channel and see an epehemeral message in action.
   ```
   Hi @member, Thanks for joining a new Pact Foundation channel. Feel free to ask questions
   ```
