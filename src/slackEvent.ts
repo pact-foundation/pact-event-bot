@@ -7,7 +7,7 @@ import {
   forbidden,
   internalServerError,
   notFound,
-  ok
+  ok,
 } from "./responses";
 import { setupTracing } from "./setupTracing";
 import { getEnv } from "./utils/getEnv";
@@ -30,7 +30,7 @@ export const handler: AsyncAPIGatewayProxyHandler = async (event, context) => {
 
     if (parsedEventBody.token !== verificationToken) {
       log.info("Could not verify token");
-      return forbidden();
+      return forbidden('Access Denied');
     }
 
     if (parsedEventBody.challenge) {
@@ -48,7 +48,7 @@ export const handler: AsyncAPIGatewayProxyHandler = async (event, context) => {
 
         let username;
         let userId;
-        let text = '';
+        let text = "";
         switch (eventData.type) {
           case "member_joined_channel": {
             userId = eventData.user;
@@ -67,15 +67,18 @@ export const handler: AsyncAPIGatewayProxyHandler = async (event, context) => {
           }
         }
 
-
         const result = await web.chat.postEphemeral({
           text,
           channel: eventData.channel,
           user: userId,
         });
-
-        log.error({ result }, "slack ephemeral message successful");
-        return ok();
+        if (result.ok === true) {
+          log.info({ result }, "slack ephemeral message successful");
+          return ok();
+        } else {
+          log.error({ result }, "slack ephemeral message unsuccessful");
+          return badRequest();
+        }
       } catch (error) {
         log.error({ error }, "Failed to process slack event");
         return internalServerError();
@@ -86,6 +89,6 @@ export const handler: AsyncAPIGatewayProxyHandler = async (event, context) => {
     return notFound();
   } catch (e) {
     log.error({ e, event }, "Bad Request");
-    return badRequest();
+    return badRequest(['Cannot process request']);
   }
 };
