@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@slack/web-api": "^5.8.0",
-    "aws-lambda": "^0.1.2",
+    "aws-lambda": "^1.0.0",
     "aws-sdk": "^2.467.0",
     "aws-xray-sdk": "^2.3.4",
     "bunyan": "^1.8.12",
