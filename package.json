@@ -29,7 +29,7 @@
     "@types/jest": "24.9.1",
     "husky": "2.7.0",
     "jest": "25.5.4",
-    "jest-express": "1.11.3",
+    "jest-express": "1.12.0",
     "jest-junit": "6.4.0",
     "lint-staged": "8.2.1",
     "prettier": "1.19.1",

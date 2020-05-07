@@ -5207,10 +5207,10 @@ jest-environment-node@^25.5.0:
     jest-util "^25.5.0"
     semver "^6.3.0"
 
-jest-express@1.11.3:
-  version "1.11.3"
-  resolved "https://registry.yarnpkg.com/jest-express/-/jest-express-1.11.3.tgz#7a6d0033c4ab60bb544210b04ef992d9edb733fd"
-  integrity sha512-+zDimqXGXvoilhyrJUXCLYxKMAUPLnDhRyt4HaL4BybMaZxHKNpNBYfiQ9CPtLG7cPD/sxSv1saNJ51YVFqsUA==
+jest-express@1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/jest-express/-/jest-express-1.12.0.tgz#d193b4011b67a01ab4b62206d6e28e759cc8bf85"
+  integrity sha512-HVpmEtVLHgT/Wh2bGy3Fy6mXdoS0Clj7d4/cFnptw2JkCVepC3FOiboavqLYZv4x2oytpWgOqikhVr84f9CwZw==
   dependencies:
     jest-node-http "1.0.0"
 
