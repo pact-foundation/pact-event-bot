@@ -26,7 +26,7 @@
     "@jbourne/serverless-webpack": "5.5.0",
     "@types/aws-lambda": "8.10.51",
     "@types/bunyan": "1.8.6",
-    "@types/jest": "24.9.1",
+    "@types/jest": "25.2.1",
     "husky": "2.7.0",
     "jest": "25.5.4",
     "jest-express": "1.12.0",
