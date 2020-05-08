@@ -30,7 +30,7 @@
     "husky": "2.7.0",
     "jest": "25.5.4",
     "jest-express": "1.12.0",
-    "jest-junit": "6.4.0",
+    "jest-junit": "10.0.0",
     "lint-staged": "8.2.1",
     "prettier": "1.19.1",
     "serverless-iam-roles-per-function": "2.0.2",
