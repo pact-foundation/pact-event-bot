@@ -38,7 +38,7 @@
     "serverless-iam-roles-per-function": "2.0.2",
     "supertest": "4.0.2",
     "swagger-mock-validator": "9.0.0",
-    "ts-jest": "25.5.1",
+    "ts-jest": "26.1.1",
     "ts-loader": "7.0.4",
     "ts-node": "8.10.1",
     "tslint": "5.20.1",
