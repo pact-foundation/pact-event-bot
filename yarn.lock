@@ -1026,10 +1026,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/aws-lambda@8.10.51":
-  version "8.10.51"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.51.tgz#7ad774507a3cf1d2e949ca305380c23b5af635a0"
-  integrity sha512-XK7RerpXj4r+IO0r7qIeNqUSU6L4qhPMwNhISxozJJiUX/jdXj9WYzTShRVisEcUQHXgJ4TTBqTArM8f9Mjb8g==
+"@types/aws-lambda@8.10.58":
+  version "8.10.58"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.58.tgz#a9b28456d8653b7d0e41d3715529a6e2cb7ad77e"
+  integrity sha512-aSAQIUv7EgHRGgkE7JP/JhaByvitTEUthgDDus9uVteF6AshMsjo6wa9tpohl7i5+HIxCwdoLiFBTMUAszfAqw==
 
 "@types/babel__core@^7.1.7":
   version "7.1.7"
