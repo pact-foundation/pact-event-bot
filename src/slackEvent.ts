@@ -11,6 +11,8 @@ import {
 } from "./responses";
 import { setupTracing } from "./setupTracing";
 import { getEnv } from "./utils/getEnv";
+const CHANNEL_GENERAL = "C5F4KFKR8"
+const CHANNEL_RANDOM = "C5F7CCDK7"
 
 setupTracing();
 
@@ -30,7 +32,7 @@ export const handler: AsyncAPIGatewayProxyHandler = async (event, context) => {
 
     if (parsedEventBody.token !== verificationToken) {
       log.info("Could not verify token");
-      return forbidden('Access Denied');
+      return forbidden("Access Denied");
     }
 
     if (parsedEventBody.challenge) {
@@ -38,38 +40,49 @@ export const handler: AsyncAPIGatewayProxyHandler = async (event, context) => {
       log.info("Challenge present, responding back to slack");
       return ok(challenge);
     } else if (
-      ["member_joined_channel", "team_join"].indexOf(
+      ["member_joined_channel", "team_join"].includes(
         parsedEventBody.event.type
-      ) + 1
+      )
     ) {
       try {
         const eventData = parsedEventBody.event;
         log.info({ type: event }, "event recieved");
-
         let username;
         let userId;
         let text = "";
+        let channel = CHANNEL_GENERAL;
         switch (eventData.type) {
           case "member_joined_channel": {
             userId = eventData.user;
-            const userResult = await web.users.info({ user: userId });
-            const user = userResult.user as any;
-            username = user.real_name;
-            text = `Hi ${username}, Thanks for joining a new Pact Foundation channel. Feel free to ask questions`;
+            channel = eventData.channel;
+            if ([CHANNEL_GENERAL, CHANNEL_RANDOM].includes(channel)) {
+              log.info({}, "Joined known channel, responding")
+              const userResult = await web.users.info({ user: userId });
+              const user = userResult.user as any;
+              username = user.real_name;
+              text = `Hi ${username}, welcome to the Pact Foundation community! Please keep language-specific technical questions in the appropriate channel (e.g. #pact-js or #pact-jvm), and remember to use threads so we can keep the discussion focussed on your issue. Please also respect our community code of conduct (https://docs.pact.io/contributing/code-of-conduct). Thanks!`;
+            } else {
+              log.info({}, "channel not in included list, ignoring")
+              ok()
+            }
             break;
           }
           case "team_join": {
-            const user = eventData.data.user;
+            log.info({}, "Joined team, responding with welcome message")
+            const user = eventData.user;
             userId = user.id;
             username = user.real_name;
-            text = `Hi ${username}, welcome to the Pact Foundation community!\n\nPlease join the relevant channels for your Pact implementation, so you can discuss your issues with the audience who can best help you.\n\nIf you need help with an issue please check your DM from the welcome bot for more info.`;
+            text = `Hi ${username}, welcome to the Pact Foundation community! Please keep language-specific technical questions in the appropriate channel (e.g. #pact-js or #pact-jvm), and remember to use threads so we can keep the discussion focussed on your issue. Please also respect our community code of conduct (https://docs.pact.io/contributing/code-of-conduct). Thanks!`;
             break;
           }
+          default:
+            log.info({ type: eventData.type }, "ignoring unknown event type");
+            ok();
         }
 
         const result = await web.chat.postEphemeral({
           text,
-          channel: eventData.channel,
+          channel,
           user: userId,
         });
         if (result.ok === true) {
@@ -89,6 +102,6 @@ export const handler: AsyncAPIGatewayProxyHandler = async (event, context) => {
     return notFound();
   } catch (e) {
     log.error({ e, event }, "Bad Request");
-    return badRequest(['Cannot process request']);
+    return badRequest(["Cannot process request"]);
   }
 };
