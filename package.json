@@ -12,12 +12,12 @@
     "start:serverless": "NODE_OPTIONS=--max_old_space_size=4096 serverless offline --host 0.0.0.0 --stage dev --webpack-use-polling"
   },
   "dependencies": {
-    "@slack/web-api": "^5.8.0",
+    "@slack/web-api": "^5.15.0",
     "aws-lambda": "^1.0.0",
     "aws-sdk": "^2.467.0",
     "aws-xray-sdk": "^3.0.0",
     "bunyan": "^1.8.12",
-    "serverless": "^1.58.0",
+    "serverless": "^2.0.0",
     "serverless-offline": "6.1.5",
     "serverless-pseudo-parameters": "^2.4.0",
     "source-map-support": "^0.5.12"
