@@ -38,7 +38,7 @@ Please join the relevant channels for your Pact implementation, so you can discu
 If you need help with an issue please check your DM from the welcome bot for more info.
 ```
 
-10. Join a new channel and see an epehemeral message in action.
+10. Join a new channel and see an ephemeral message in action.
 
 ```
 Hi member, Thanks for joining a new Pact Foundation channel. Feel free to ask questions

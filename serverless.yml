@@ -2,13 +2,13 @@ service: pact-event-bot
 
 plugins:
   - "@jbourne/serverless-webpack"
-  - serverless-pseudo-parameters
+  # - serverless-pseudo-parameters
   - serverless-offline
   - serverless-iam-roles-per-function
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs18.x
   stage: ${opt:stage, 'dev'}
   region: ${opt:AwsRegion, 'eu-west-2'}
   environment:
