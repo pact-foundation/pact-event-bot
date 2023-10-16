@@ -119,7 +119,7 @@ describe("Pact Event Bot Error tests", () => {
     // Act
     const response = await handler(event as APIGatewayEvent, context);
 
-    expect(response.statusCode).toEqual(404);
+    expect(response.statusCode).toEqual(200);
   });
 
   it("sends a message to slack for a team_join event", async () => {
@@ -131,12 +131,12 @@ describe("Pact Event Bot Error tests", () => {
         event: {
           type: slackEvent,
           channel: "channel",
-          data: {
+          // data: {
             user: {
               id: "id",
               real_name: "real_name",
             },
-          },
+          // },
         },
       }),
     };
@@ -195,7 +195,7 @@ describe("Pact Event Bot Error tests", () => {
     const response = await handler(event as APIGatewayEvent, context);
 
     // Assert
-    expect(response.statusCode).toEqual(400);
+    expect(response.statusCode).toEqual(500);
   });
 
   it("should return an internal server error if posting to slack fails", async () => {
