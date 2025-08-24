@@ -7681,10 +7681,10 @@ ts-jest@29.1.1:
     semver "^7.5.3"
     yargs-parser "^21.0.1"
 
-ts-loader@9.5.0:
-  version "9.5.0"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-9.5.0.tgz#f0a51dda37cc4d8e43e6cb14edebbc599b0c3aa2"
-  integrity sha512-LLlB/pkB4q9mW2yLdFMnK3dEHbrBjeZTYguaaIfusyojBgAGf5kF+O6KcWqiGzWqHk0LBsoolrp4VftEURhybg==
+ts-loader@9.5.4:
+  version "9.5.4"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-9.5.4.tgz#44b571165c10fb5a90744aa5b7e119233c4f4585"
+  integrity sha512-nCz0rEwunlTZiy6rXFByQU1kVVpCIgUpc/psFiKVrUwrizdnIbRFu8w7bxhUF0X613DYwT4XzrZHpVyMe758hQ==
   dependencies:
     chalk "^4.1.0"
     enhanced-resolve "^5.0.0"
