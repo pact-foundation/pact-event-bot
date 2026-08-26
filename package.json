@@ -17,7 +17,7 @@
     "aws-sdk": "^2.1473.0",
     "aws-xray-sdk": "^3.5.2",
     "bunyan": "^2.0.5",
-    "serverless": "^3.35.2",
+    "serverless": "^4.0.0",
     "serverless-offline": "13.5.1",
     "source-map-support": "^0.5.21"
   },
