@@ -3708,6 +3708,11 @@ expect@^29.0.0, expect@^29.7.0:
     jest-message-util "^29.7.0"
     jest-util "^29.7.0"
 
+express-mock-core@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/express-mock-core/-/express-mock-core-2.0.0.tgz#b0992185f92f9926cf63046a0fd823d61cc670b8"
+  integrity sha512-VVvA7xAxEF0E3eUr5DOhLKoz/7z0VUSCk0vCHt3gXl7FkraPeT00uZOrslMxkb2DvjC6NTStWX/NEEOA2QMmZg==
+
 ext-list@^2.0.0:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/ext-list/-/ext-list-2.2.2.tgz#0b98e64ed82f5acf0f2931babf69212ef52ddd37"
@@ -4875,12 +4880,12 @@ jest-environment-node@^29.7.0:
     jest-mock "^29.7.0"
     jest-util "^29.7.0"
 
-jest-express@1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/jest-express/-/jest-express-1.12.0.tgz#d193b4011b67a01ab4b62206d6e28e759cc8bf85"
-  integrity sha512-HVpmEtVLHgT/Wh2bGy3Fy6mXdoS0Clj7d4/cFnptw2JkCVepC3FOiboavqLYZv4x2oytpWgOqikhVr84f9CwZw==
+jest-express@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/jest-express/-/jest-express-2.0.0.tgz#3558cb1e18d893e019294271f73defb3ccd89e32"
+  integrity sha512-5Vkpcdsm0VmRF1cm5dCUZXbP546yI4z2+SofkKGynJDFdC2VRXWulr3/FlxOAs1Em7bHyjDWt965cadq7Nc1pg==
   dependencies:
-    jest-node-http "1.0.0"
+    express-mock-core "^2.0.0"
 
 jest-get-type@^29.6.3:
   version "29.6.3"
@@ -4957,11 +4962,6 @@ jest-mock@^29.7.0:
     "@jest/types" "^29.6.3"
     "@types/node" "*"
     jest-util "^29.7.0"
-
-jest-node-http@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/jest-node-http/-/jest-node-http-1.0.0.tgz#f692b0e3abfafd49b74a1953369478b59c9973b1"
-  integrity sha512-WcO1nqqkgwZ4sHAJ90YGqOiFYFkDm9eP8HsBwadedlJaF2T5JHM1BmnpskHDDlB3B4JzRl6CJgOpSOAOwoRfhQ==
 
 jest-pnp-resolver@^1.2.2:
   version "1.2.3"
